@@ -44,7 +44,17 @@ abline(v=835, col="#ff5555", lwd=4);
 Please note that the red line represents which 5-minute interval contains the maximum number of steps
 
 ## Imputing missing values
+1. Counting the number of NAs
 
+```r
+missingrows  <- nrow(csvraw) - nrow(csvcompletecases);
+print(missingrows);
+```
+
+```
+## [1] 2304
+```
+2. To solve the problem with the NA values. We shoud replace each NA value with the average number of steps on the interval across all other days where there no NA on that specific interval. If the average is stil NA, we can fill with zero. This will imporve our data.
 
 
 ## Are there differences in activity patterns between weekdays and weekends?

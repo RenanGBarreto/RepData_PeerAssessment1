@@ -92,6 +92,15 @@ abline(v=835, col=&quot;#ff5555&quot;, lwd=4);</code></pre>
 </div>
 <div id="imputing-missing-values" class="section level2">
 <h2>Imputing missing values</h2>
+<ol style="list-style-type: decimal">
+<li>Counting the number of NAs</li>
+</ol>
+<pre class="r"><code>missingrows  &lt;- nrow(csvraw) - nrow(csvcompletecases);
+print(missingrows);</code></pre>
+<pre><code>## [1] 2304</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>To solve the problem with the NA values. We shoud replace each NA value with the average number of steps on the interval across all other days where there no NA on that specific interval. If the average is stil NA, we can fill with zero. This will imporve our data.</li>
+</ol>
 </div>
 <div id="are-there-differences-in-activity-patterns-between-weekdays-and-weekends" class="section level2">
 <h2>Are there differences in activity patterns between weekdays and weekends?</h2>
